@@ -62,7 +62,7 @@
 
    **Required:**
  
-   ``id=[string]`
+   `id=[string]`
 
 * **Data Params**
 
