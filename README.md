@@ -52,7 +52,7 @@
 
  * **URL**
 
-  /data/fetch
+    /data/fetch
 
 * **Method:**
 
