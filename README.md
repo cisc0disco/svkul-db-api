@@ -1,7 +1,7 @@
 **Dokumentace API pro databázi UJEP**
 ----
 
-## Přidání pomůcky do databáze
+### Přidání pomůcky do databáze
 
 * **URL**
 
@@ -48,7 +48,7 @@
    -d '{autor: "Semotanová, Eva", nazev: "Česko : Ottův historický atlas", rok: 2007, nakladatel: "Ottovo", mistoVydani: "Praha", signatura: "IN191196", "isxn": 9788073605775, id: "K.II.2.14, K.II.2.15"}'
   ```
 
-## Získání pomůcky z databáze
+### Získání pomůcky z databáze
 
  * **URL**
 
