@@ -19,7 +19,7 @@
 
    **Optional:**
  
-   `autor[string]` `rok=[integer]` `nakladatel=[string]` `mistoVydani=[string]` `signatura=[string]` `isxn=[integer]`
+   `autor=[string]` `rok=[integer]` `nakladatel=[string]` `mistoVydani=[string]` `signatura=[string]` `isxn=[integer]`
 
 * **Data Params**
 
