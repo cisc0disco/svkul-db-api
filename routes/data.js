@@ -26,7 +26,7 @@ router.post('/add', function(req, res, next)
 	if(req.body.constructor === Object && Object.keys(req.body).length === 0) 
 	{
 		console.log('Object missing');
-		res.sendStatus(418);
+		next(createError(418));
 	} else 
 	{
 		var ids = [];
@@ -41,7 +41,10 @@ router.post('/add', function(req, res, next)
 			ids.push(element.replace("UNIV: ", "U"));
 		});
 
-		var add = Model({autor: req.body.autor, nazev: req.body.nazev, rok: req.body.rok, nakladatel: req.body.nakladatel, mistoVydani: req.body.mistoVydani, signatura: req.body.signatura, ISXN: req.body.isxn, id: ids});
+		var add = Model({
+			autor: req.body.autor, nazev: req.body.nazev, rok: req.body.rok, nakladatel: req.body.nakladatel,
+			mistoVydani: req.body.mistoVydani, signatura: req.body.signatura, ISXN: req.body.isxn, id: ids
+		});
 
 		add.save(function(err, doc) {
 			if (err) return res.send(406);
@@ -55,18 +58,18 @@ router.post('/fetch', function(req, res, next)
 	if(req.body.constructor === Object && Object.keys(req.body).length === 0) 
 	{
 		console.log('Object missing');
-		res.sendStatus(418);
+		next(createError(418));
 	} else if (req.body.kategorie.indexOf("A") > -1 || req.body.kategorie.indexOf("B") > -1 || req.body.kategorie.indexOf("C") > -1 ||req.body.kategorie.indexOf("D") > -1 || req.body.kategorie.indexOf("E") > -1 || req.body.kategorie.indexOf("G") > -1 || req.body.kategorie.indexOf("H") > -1 || req.body.kategorie.indexOf("I") > -1 || req.body.kategorie.indexOf("J") > -1 || req.body.kategorie.indexOf("K") > -1) 
 	{
 		console.log(req.body.kategorie);
 
-		Model.find({id: {$regex: "^" + req.body.kategorie}}, function(err, docs) {
-			if (err) return res.sendStatus(406);
+		Model.find({ id: { $regex: "^" + req.body.kategorie } }, function(err, docs) {
+			if (err) return next(createError(406));
 			res.send(docs);
 		});
 		
 	} else {
-		res.sendStatus(406);
+		next(createError(406));
 	}
 });
 
