@@ -1,14 +1,19 @@
 {
-  "name": "ujep2",
+  "name": "ujep-server",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   },
   "dependencies": {
     "body-parser": "^1.19.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^12.0.4",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",

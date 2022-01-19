@@ -1,5 +1,9 @@
-**Dokumentace API pro databázi UJEP**
+# Dokumentace API pro databázi UJEP
 ----
+
+### Spuštění serveru
+`.env` se automaticky načte do env proměnných. Server pracuje s následujícím:
+- `MONGODB` URI pro připojení k MongoDB.
 
 ### Přidání pomůcky do databáze
 
