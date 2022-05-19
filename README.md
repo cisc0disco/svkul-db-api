@@ -1,4 +1,4 @@
-# Dokumentace API pro databázi UJEP
+# Dokumentace API pro databázi SVKUL
 ----
 
 ### Spuštění serveru
