@@ -1,8 +1,9 @@
-require('dotenv')();
+//require('dotenv')();
 const createError = require('http-errors');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const http = require("http")
 
 const indexRouter = require('./routes/index');
 const dataRouter = require('./routes/data');
@@ -17,8 +18,13 @@ mongoose.connection.on('error', console.error.bind(console, 'MongoDB error!'));
 
 var app = express();
 
-app.use(require('./routes'));
+http.createServer(app).listen(app.get('port'),
+  function(){
+    console.log("Express server listening on port " + app.get('port'));
+});
 
+app.use(require('./routes'));
+app.set("view engine", "ejs")
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
